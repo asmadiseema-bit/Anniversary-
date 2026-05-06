@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Zaki ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background: #f4e7d3; 
+            background-image: url('https://www.transparenttextures.com/patterns/old-wall.png');
+            font-family: 'Quicksand', sans-serif; 
+            overflow: hidden; 
+            color: #333;
+        }
+        
+        /* Intro Screen */
+        #intro {
+            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #2c3e50; color: white;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            z-index: 100; transition: opacity 1s ease; text-align: center; padding: 20px;
+        }
+        .bow-btn {
+            background: #e74c3c; color: white; padding: 15px 30px; border-radius: 50px;
+            font-size: 1.2rem; margin-top: 20px; border: none; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.5);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* Scrapbook Container */
+        #book {
+            width: 100vw; height: 100vh; position: relative; display: none; padding: 20px;
+        }
+        .page {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.9); padding: 30px 20px;
+            opacity: 0; pointer-events: none; transition: opacity 0.8s ease;
+            overflow-y: auto; padding-bottom: 80px;
+        }
+        .page.active { opacity: 1; pointer-events: auto; }
+
+        /* Text & Polaroid Styles */
+        h1 { font-family: 'Dancing Script', cursive; font-size: 2.5rem; text-align: center; color: #c0392b; margin-bottom: 20px; }
+        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; text-align: justify; }
+        
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px; }
+        .polaroid {
+            background: white; padding: 10px 10px 40px 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 45%; max-width: 150px; transform: rotate(-2deg);
+        }
+        .polaroid:nth-child(even) { transform: rotate(3deg); }
+        .polaroid img { width: 100%; height: auto; display: block; border: 1px solid #ddd; }
+
+        /* Navigation */
+        .nav-btns {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 20px; z-index: 50;
+        }
+        .nav-btns button {
+            background: #333; color: white; border: none; padding: 10px 20px; border-radius: 20px; font-size: 1rem;
+        }
+
+        /* Rolling Credits */
+        .credits-container { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: black; color: white; }
+        .credits { animation: rollUp 15s linear forwards; text-align: center; font-size: 1.2rem; }
+        @keyframes rollUp { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }
+
+        /* Final Heart Scene */
+        .final-scene { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; background: black; color: white; text-align: center; }
+        .heart { font-size: 4rem; color: #e74c3c; cursor: pointer; animation: pulse 1s infinite; margin: 20px 0; }
+        #final-video { display: none; width: 100%; max-width: 400px; border-radius: 10px; margin-top: 20px;}
+    </style>
+</head>
+<body>
+
+    <audio id="bgm" src="https://files.catbox.moe/jb9adp.mp3" loop></audio>
+
+    <div id="intro">
+        <h1 style="color: white; font-size: 3rem;">Happy Anniversary, Zaki ❤️</h1>
+        <p>A little something for my everything...</p>
+        <button class="bow-btn" onclick="openBook()">Untie the Bow & Open</button>
+    </div>
+
+    <div id="book">
+        
+        <div class="page active" id="p1">
+            <h1>Our Journey Begins</h1>
+            <div class="gallery">
+                <div class="polaroid"><img src="https://ibb.co/x8hJf7hF" alt="us"></div>
+                <div class="polaroid"><img src="https://ibb.co/N61qVDfG" alt="us"></div>
+                <div class="polaroid"><img src="https://ibb.co/R8MLLpG" alt="us"></div>
+            </div>
+            <p>Maine yeh jitna likha hai usmain hamari poori journey likhne ki koshish ki hai. Woh pehla "Hi" voh note ka reply phir ek dusre ke itne close hona sab kuch. Tujhe milne ke baad mujhe realize hua ki life kitni unexpected hai mujhe kabhi nahi laga tha ki main apna pyar aise experience karungi tujhe toh dil main jagah kya di tune toh pura dil hi rakh liya hamari dosti, hamari ladaaiyan voh roz sone se pehle pucchi sab kuch meri life ka important part ban gai hai jaise tu good morning nahi bolega toh mera din chalu hi nahi hoga tu hai toh main ho sake itna sab kar sakti hu meri hasi khushi, dukh sab tere se juda hai tu hi toh main hoon. Tere bina 10 min bhi ek ghanta lagta hai aur ek ghanta 10 min har gaane main bs tu yaad aata hai koi aisa din nahi jata jab tujhe maim miss na karu call cut hote hi hasi gayab ekdum se sab dull ho jata hai.</p>
+        </div>
+
+        <div class="page" id="p2">
+            <h1>My Everything</h1>
+            <div class="gallery">
+                <div class="polaroid"><img src="https://ibb.co/rGkMmkW7" alt="us"></div>
+                <div class="polaroid"><img src="https://ibb.co/5xnTzd2r" alt="us"></div>
+                <div class="polaroid"><img src="https://ibb.co/yBpnvPgN" alt="us"></div>
+            </div>
+            <p>I love you a lot than I'll ever be able to tell you zaki tere se hi mujhe pata chala hai ki asli main pyar karna aur loved feel karna kya hota hai tu hi mera sab kuch hai mujhe toh lagta hai meri asli life tere aane ke baad hi start hui hai. Kitni bhi ladhai kar lu main ladhai ke start se hi jaanti hoti hu ki yeh das min baad khatam ho jayega tu mujhe mere se jada samajhta hai jo cheez mujhe nahi pata hogi mere bole bina hi samajh jata hai tere bina mujhe koi aur dikhta hi nahi hai my life revolves around you. Ab mere pass duniya bhar ki sari khushiya hai jo mujhe chahiye tha voh jab mil gaya hai you make my life worth living. Mujhe mere life ki har cheez tere saath experience karni hai yeh toh bas start hai darling <3</p>
+        </div>
+
+        <div class="page" id="p3">
+            <h1>Kismat</h1>
+            <div class="gallery">
+                <div class="polaroid"><img src="https://ibb.co/zHsBNM6v" alt="us"></div>
+                <div class="polaroid"><img src="https://ibb.co/jkGGp5KP" alt="us"></div>
+                <div class="polaroid"><img src="https://ibb.co/LXJLd42j" alt="us"></div>
+            </div>
+            <p>Voh kehte haina kismat main hota hai toh dhund hi leta hai vaise hi hum bhi mil gaye. Hamara millna mujhe nahi lagta koi aam baat hai aisa lagta hai sab pehle se likha hua hai teri job ka time match hona voh sharuk ke mutual hona sab kuch itne log hai aas pass tab bhi sare stars hame roze aur close aane main help karte hai. Itni cheez hui hai main chaligi, ladhaiya hui, ghar main pata chala aur kya kuch nahi par voh bond kabhi change nahi hua na kabhi hoga aur milna sab kuch nahi hota rukna aur mushkil hota hai aur roz we choose each other and efforts kabhi kam nahi hote hai tere se bas pyar nahi hai ek obsession hai main pagal hu tere liye aur hamesha rahungi.</p>
+        </div>
+
+        <div class="page" id="credits-page" style="padding:0; background:black;">
+            <div class="credits-container">
+                <div class="credits">
+                    <h1 style="color:white; margin-bottom: 40px;">The End... Or Just the Beginning?</h1>
+                    <p>Starring: My Bubu & Me</p>
+                    <p>Director: Kismat</p>
+                    <p>Soundtrack: Our Voice Notes</p>
+                    <p>Special Thanks: The universe for bringing us together.</p>
+                    <p style="margin-top: 50px;">I Love You Zaki.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="final-page" style="padding:0;">
+            <div class="final-scene">
+                <h2>*A stickman walks in and drops a heart for Zaki*</h2>
+                <div class="heart" onclick="playVideo()">❤️</div>
+                <p>Tap the heart...</p>
+                
+                <video id="final-video" controls>
+                    <source src="YOUR_VIDEO_LINK_HERE.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="nav-btns">
+            <button onclick="prevPage()">Back</button>
+            <button onclick="nextPage()">Next Page</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+        const bgm = document.getElementById('bgm');
+
+        function openBook() {
+            document.getElementById('intro').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('intro').style.display = 'none';
+                document.getElementById('book').style.display = 'block';
+                bgm.play(); // Starts the music
+            }, 1000);
+        }
+
+        function showPage(index) {
+            pages.forEach((page, i) => {
+                page.classList.remove('active');
+                if (i === index) page.classList.add('active');
+            });
+        }
+
+        function nextPage() {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+
+        function playVideo() {
+            document.querySelector('.heart').style.display = 'none';
+            const vid = document.getElementById('final-video');
+            vid.style.display = 'block';
+            vid.play();
+            bgm.pause(); // Pauses background music so he can hear the video
+        }
+    </script>
+</body>
+</html>
